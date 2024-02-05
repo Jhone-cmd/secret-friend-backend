@@ -30,7 +30,6 @@ class EventsController {
         const addEventSchema = z.object({
             title: z.string(),
             description: z.string(),
-            grouped: z.boolean().optional()
         });
 
         const body = addEventSchema.safeParse(req.body);
@@ -41,7 +40,7 @@ class EventsController {
         const newEvent = await EventService.createEvent(body.data);
 
         if (newEvent) {
-            return res.status(201).json();
+            return res.status(201).json({ newEvent });
         } else {
             return res.json({ error: "An error has occurred" });
         }
