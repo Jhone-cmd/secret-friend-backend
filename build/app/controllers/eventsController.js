@@ -31,6 +31,7 @@ class EventsController {
             const addEventSchema = zod_1.z.object({
                 title: zod_1.z.string(),
                 description: zod_1.z.string(),
+                grouped: zod_1.z.boolean().optional(),
             });
             const body = addEventSchema.safeParse(req.body);
             if (!body.success) {
@@ -38,7 +39,7 @@ class EventsController {
             }
             const newEvent = await eventsService_1.default.createEvent(body.data);
             if (newEvent) {
-                return res.status(201).json({ event: newEvent });
+                return res.status(201).json({ newEvent });
             }
             else {
                 return res.json({ error: "An error has occurred" });

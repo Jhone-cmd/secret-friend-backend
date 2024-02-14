@@ -19,7 +19,6 @@ class App {
     middleware() {
         this.server.use((0, cors_1.default)());
         this.server.use(express_1.default.json());
-        this.server.use(express_1.default.urlencoded({ extended: true }));
     }
     routes() {
         this.server.use("/admin", admin_1.default);
