@@ -29,7 +29,7 @@ class PersonController {
         });
 
         if (personItem) {
-            return res.json({ people: personItem });
+            return res.json({ person: personItem });
         } else {
             return res.json({ error: "An error has occurred" });
         }
@@ -55,7 +55,7 @@ class PersonController {
         });
 
         if (newPerson) {
-            return res.status(201).json({ people: newPerson });
+            return res.status(201).json({ newPerson });
         } else {
             return res.json({ error: "An error has occurred" });
         }
@@ -91,7 +91,7 @@ class PersonController {
                 id: parseInt(id),
                 id_event: parseInt(id_event),
             });
-            return res.json({ people: personItem });
+            return res.json({ person: personItem });
         } else {
             return res.json({ error: "An error has occurred" });
         }

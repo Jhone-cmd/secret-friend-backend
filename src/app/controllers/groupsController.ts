@@ -46,7 +46,7 @@ class GroupsController {
         });
 
         if (newGroup) {
-            return res.status(201).json({ group: newGroup });
+            return res.status(201).json({ newGroup });
         } else {
             return res.json({ error: "An error has occurred" });
         }
