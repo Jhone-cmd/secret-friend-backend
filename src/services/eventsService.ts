@@ -126,9 +126,7 @@ class EventService {
                                 id_event: id,
                             },
                             {
-                                matche: await encryptMatch(
-                                    sortedList[i].matche
-                                ),
+                                matche: await encryptMatch(sortedList[i].matche),
                             }
                         );
                     }
